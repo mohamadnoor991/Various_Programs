@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+    <meta charset="UTF-8">
+    <title>Semantic web project</title>
+    <style>
+    header {
+    background-color: #12EE17;
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+
+    }
+body {
+  background-color: #E6E6FA;
+}
+.navbar navbar-expand-lg navbar-light bg-light{
+
+}
+
+
+    </style>
+</head>
+<body>
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" justify-content-center>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" justify-content-center>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Building
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/museum">Museum</a>
+                        <a  class="dropdown-item" href="/wikihospitals">Hospital</a>
+                        <a  class="dropdown-item" href="/wikihospitals">wiki data Hospital</a>
+                        <a  class="dropdown-item" href="/Local-Hopital-Data">Local Hospitals</a>
+                        <a  class="dropdown-item" href="/Map.html">Hospitals Wiki Map</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Bike Station
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a  class="dropdown-item" href="/StEtienne-bike-staion">ST-Etienne</a>
+                        <a class="dropdown-item"  href="/Lyon-bike-station">Lyon</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<marquee  direction="up">
+    <div class="container" align="center">
+        <img src="https://previews.123rf.com/images/ifh/ifh1808/ifh180800022/111636106-illustration-of-cartoon-hospital-central-entrance-view-on-colorful-nature-background.jpg" class="rounded-circle" alt="Cinque Terre" width="304" height="236">
+        <img src="https://loe.org/content/2013-12-20/1-bigstock-Citi-bike-station-in-Manhattan-48949397.jpg" class="rounded-circle" alt="Cinque Terre" width="304" height="236">
+        <img src="https://www.travelcaffeine.com/wp-content/uploads/2017/04/louvre-museum-reflection-paris-france-bricker.jpg" class="rounded-circle" alt="Cinque Terre"  width="304" height="236">
+
+    </div>
+</marquee>
+<main>
+<!--<div class="container" align="right">-->
+    <div class="container">
+        <div class="row justify-content-center">
+    <div class="col">
+        <button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.location.href = '/museum';"/>Museums </button>
+        <button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.location.href = '/wikihospitals';"/>Hospitals By WikiData</button>
+        <button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.location.href = '/Map.html';"/>Hospitals Wiki Map</button>
+
+<!--        <a href="/Map.html" class="btn btn-primary btn-lg btn-block"> <button type="button" class="btn btn-primary btn-lg btn-block">Hospitals Wiki Map</button></a>-->
+        <button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.location.href = '/Local-Hopital-Data';"/>Local Hospitals Data</button>
+        <button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.location.href = '/StEtienne-bike-staion';"/>Saint-etienne Bike Stations</button>
+        <button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.location.href = '/Lyon-bike-station';"/>Lyon Bike Stations</button>
+
+    </div></div>
+    </div>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

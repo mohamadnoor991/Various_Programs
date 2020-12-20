@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">-->
+    <meta charset="UTF-8">
+    <title>Hospitals</title>
+    <style>tr:hover {background-color:#16E80B;}
+     h1 { color: #EE8312; }
+</style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" ></head>
+<body>
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" justify-content-center>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" justify-content-center>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Building
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/museum">Museum</a>
+                        <a  class="dropdown-item" href="/wikihospitals">Hospital</a>
+                        <a  class="dropdown-item" href="/wikihospitals">wiki data Hospital</a>
+<!--                        /Local-Hopital-Data-->
+                        <a  class="dropdown-item" href="#">Local Hospitals</a>
+                        <a  class="dropdown-item" href="/Map.html">Hospitals Wiki Map</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Bike Station
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a  class="dropdown-item" href="/StEtienne-bike-staion">ST-Etienne</a>
+                        <a class="dropdown-item"  href="./Lyon-bike-station">Lyon</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<br>
+<div>
+<h1 align="center" > Hospital Local Data</h1>
+<P style="background-color:#2E86C1 " align="center"><marquee direction="right">
+<h1 style="background-color:#2E86C1 " align="center" >Here you can find the information about the hospitals in <b>France</b></h1></marquee>
+    </P>
+<table align="center" border="2.5" class="table" >
+    <thead class="thead-light">
+    <tr>
+        <th>NAME</th>
+        <th>buildingNumber</th>
+        <th>emergency</th>
+        <th>operatorType</th>
+        <th>osm_TimeStamp</th>
+        <th>ref_France_Finess</th>
+        <th>lat_long</th>
+        <th>city</th>
+<!--        <th>medicalSpecialty</th>-->
+        <th>alternateName</th>
+<!--        <th>email</th>-->
+        <th>postalCode</th>
+        <th>provider</th>
+        <th>streetAddress</th>
+        <th>telephone</th>
+    </tr>
+    </thead>
+    <tr th:each="hospital : ${hospitals}">
+        <td th:text="${hospital.name}"></td>
+        <td th:text="${hospital.buildingNumber}"></td>
+        <td th:text="${hospital.emergency}"></td>
+        <td th:text="${hospital.operatorType}"></td>
+        <td th:text="${hospital.osm_TimeStamp}"></td>
+        <td th:text="${hospital.ref_France_Finess}"></td>
+        <td th:text="${hospital.lat_long}"></td>
+        <td th:text="${hospital.city}"></td>
+<!--        <td th:text="${hospital.medicalSpecialty}"></td>-->
+        <td th:text="${hospital.alternateName}"></td>
+<!--        <td th:text="${hospital.email}"></td>-->
+        <td th:text="${hospital.postalCode}"></td>
+        <td th:text="${hospital.provider}"></td>
+        <td th:text="${hospital.streetAddress}"></td>
+        <td th:text="${hospital.telephone}"></td>
+<!--        <td><a href="">check information</a> </td>-->
+    </tr>
+</table>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

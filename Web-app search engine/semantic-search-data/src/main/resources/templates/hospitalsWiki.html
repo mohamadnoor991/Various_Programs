@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:style="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Wiki Hospital</title>
+    <style>tr:hover {background-color:#16E80B;}</style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" ></head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" justify-content-center>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" justify-content-center>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Building
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/museum">Museum</a>
+                        <a  class="dropdown-item" href="/wikihospitals">Hospital</a>
+                        <a  class="dropdown-item" href="">wiki data Hospital</a>
+                        <!--                        //wikihospitals-->
+                        <a  class="dropdown-item" href="/Local-Hopital-Data">Local Hospitals</a>
+                        <a  class="dropdown-item" href="/Map.html">Hospitals Wiki Map</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Bike Station
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a  class="dropdown-item" href="/StEtienne-bike-staion">ST-Etienne</a>
+                        <a class="dropdown-item"  href="./Lyon-bike-station">Lyon</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<br>
+<div>
+
+    <h1 align="center"> Hello To Wiki Hospital</h1>
+    <P style="background-color:#2E86C1 " align="center"><marquee direction="right">
+        <h1 style="background-color:#2E86C1 " align="center">Here you can find the information about the hospitals in <b>France</b> From WikiData</h1></marquee>
+    </P>
+
+    <table align="center" border="3" class="table">
+        <thead class="thead-light">
+        <tr>
+            <th>Hospital Name</th>
+            <th>Version</th>
+            <th>Country</th>
+            <th>Location</th>
+            <th>lastDataUpdated</th>
+            <th>HospitalTimeStamp</th>
+<!--            <th>ImageHospital</th>-->
+            <th>InstanceOfLabel</th>
+            <th>CityNameLabel</th>
+            <th>Co_CategoryLabel</th>
+            <th>StreetLabel</th>
+            <th>MerimeeId</th>
+            <th>UnviersalHistoryLabel</th>
+            <th>LabelOfHospital</th>
+
+        </tr>
+        </thead>
+
+
+            <tr th:each="hospital : ${hospitals}">
+            <td th:text="${hospital.nameLabel}"></td>
+            <td th:text="${hospital.version}"></td>
+            <td th:text="${hospital.countryLabel}"></td>
+
+                <td th:text="${hospital.geoLocation}"></td>
+                <td th:text="${hospital.lastDataUpdated}"></td>
+                <td th:text="${hospital.hospitalTimeStamp}"></td>
+<!--                <td th:text="${hospital.imageHospital}"></td>-->
+                <td th:text="${hospital.instanceOfLabel}"></td>
+                <td th:text="${hospital.cityNameLabel}"></td>
+
+
+                <td th:text="${hospital.co_CategoryLabel}"></td>
+                <td th:text="${hospital.streetLabel}"></td>
+                <td th:text="${hospital.merimeeId}"></td>
+                <td th:text="${hospital.unviersalHistoryLabel}"></td>
+                <td th:text="${hospital.labelOfHospital}"></td>
+
+
+        </tr>
+    </table>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>
